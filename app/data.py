@@ -35,7 +35,7 @@ def upsert_prices(df: pd.DataFrame, ticker: str, col=None) -> int:
     for _, r in df.iterrows():
         doc = {
             "ticker": ticker,
-            "date": r["date"].to_pydatetime(),  # Python datetime for Mongo
+            "date": r["date"].to_pydatetime(),
             "open": float(r["Open"]),
             "high": float(r["High"]),
             "low": float(r["Low"]),
